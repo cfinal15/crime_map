@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crime Map & Chatbot</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .container { display: flex; height: 100vh; }
+        iframe { border: none; width: 70%; height: 100%; }
+        .chatbot { width: 30%; padding: 1rem; box-sizing: border-box; background: #f4f4f4; display: flex; flex-direction: column; }
+        #chat { flex: 1; overflow-y: auto; margin-bottom: 1rem; }
+        .msg { margin: 0.5rem 0; }
+        .user { text-align: right; }
+        .bot { text-align: left; }
+        input { width: 80%; padding: 0.5rem; }
+        button { padding: 0.5rem; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <iframe src="/static/crime_map.html"></iframe>
+    <div class="chatbot">
+        <h3>Chatbot</h3>
+        <div id="chat"></div>
+        <div>
+            <input type="text" id="userInput" placeholder="Ask a question..." />
+            <button onclick="send()">Send</button>
+        </div>
+    </div>
+</div>
+<script>
+    async function send() {
+        const input = document.getElementById("userInput");
+        const chat = document.getElementById("chat");
+        const msg = input.value;
+        if (!msg) return;
+
+        chat.innerHTML += `<div class='msg user'><b>You:</b> ${msg}</div>`;
+        input.value = "";
+
+        const res = await fetch("/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: msg }),
+        });
+        const data = await res.json();
+        chat.innerHTML += `<div class='msg bot'><b>Bot:</b> ${data.reply}</div>`;
+        chat.scrollTop = chat.scrollHeight;
+    }
+</script>
+</body>
+</html>

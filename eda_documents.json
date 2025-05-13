@@ -1,0 +1,52 @@
+[
+  {
+    "id": "e470d126-0f2a-4268-97c4-4e5c373ef049",
+    "title": "Top Crime Hotspots",
+    "content": "Top 10 crime hotspots (2022-01 to 2024-12):\n1. Southend-on-Sea 015B: 6109 crimes\n2. Basildon 015C: 4949 crimes\n3. Tendring 016B: 3528 crimes\n4. Colchester 007D: 2847 crimes\n5. Southend-on-Sea 014C: 2845 crimes\n6. Chelmsford 010G: 2554 crimes\n7. Thurrock 017D: 2325 crimes\n8. Basildon 018D: 2297 crimes\n9. Colchester 007G: 2159 crimes\n10. Southend-on-Sea 010A: 2138 crimes",
+    "tags": [
+      "hotspot",
+      "lsoa"
+    ],
+    "time_range": "2022-01 to 2024-12"
+  },
+  {
+    "id": "20d7fcdb-a77d-4f3a-9ebc-a60295fd4d91",
+    "title": "Monthly Crime Trends",
+    "content": "Monthly crime trends (2022-01 to 2024-12): Crime counts ranged from 11131 to 15421 per month.",
+    "tags": [
+      "trends",
+      "time-series"
+    ],
+    "time_range": "2022-01 to 2024-12"
+  },
+  {
+    "id": "be59a837-2284-406f-80bd-bfe6b1ec089b",
+    "title": "Yearly Crime Summary",
+    "content": "Total crimes by year:\n2022: 189127\n2023: 170931\n2024: 158403",
+    "tags": [
+      "year",
+      "summary"
+    ],
+    "time_range": "2022-01 to 2024-12"
+  },
+  {
+    "id": "bb52840a-e7a1-4697-9e84-4843cb77bc85",
+    "title": "Crime Type Distribution",
+    "content": "Most frequent crime types:\nViolence and sexual offences: 205964\nAnti-social behaviour: 54022\nPublic order: 41773\nCriminal damage and arson: 41324\nVehicle crime: 40223\nOther theft: 37232\nShoplifting: 33694\nBurglary: 20436\nDrugs: 16004\nOther crime: 10552",
+    "tags": [
+      "type",
+      "categorical"
+    ],
+    "time_range": "2022-01 to 2024-12"
+  },
+  {
+    "id": "71340df9-7963-4c5e-b38a-3031f9161c49",
+    "title": "Crime by District",
+    "content": "Top districts by crime volume:\nSouthend: 62949\nBasildon: 62436\nColchester: 56516\nThurrock: 53827\nChelmsford: 50490\nTendring: 43208\nHarlow: 34560\nBraintree: 33926\nEpping Forest: 32760\nCastle Point: 18594",
+    "tags": [
+      "district",
+      "regional"
+    ],
+    "time_range": "2022-01 to 2024-12"
+  }
+]
