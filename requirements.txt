@@ -1,6 +1,8 @@
 flask
 langchain
+langchain-community
 faiss-cpu
 sentence-transformers
 openai
 gunicorn
+tiktoken

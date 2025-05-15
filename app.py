@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify, render_template
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+from langchain_community.embeddings import OpenAIEmbeddings
+from langchain_community.vectorstores import FAISS
 from langchain.chains import RetrievalQA
-from langchain.llms import OpenAI
+from langchain_community.llms import OpenAI
 from langchain.schema import Document
 import json
 import os
@@ -19,7 +19,7 @@ documents = [
 ]
 
 # LangChain RAG setup
-embedding = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+embedding = OpenAIEmbeddings(openai_api_key=os.environ.get("OPENAI_API_KEY"))
 db = FAISS.from_documents(documents, embedding)
 qa = RetrievalQA.from_chain_type(llm=OpenAI(temperature=0), retriever=db.as_retriever())
 
